@@ -50,7 +50,7 @@ public class Pizza {
         this.price = this.price +backPackPrice;
     }
 
-    public void getBill() {
+    public String getBill() {
         // your code goes here
         String bill = "";
          System.out.println(basePizzaPrice);
@@ -64,7 +64,7 @@ public class Pizza {
             bill += backPackPrice;
         }
           bill+= this.price;
-         System.out.println(bill);
+            return bill;
     }
 
 }
