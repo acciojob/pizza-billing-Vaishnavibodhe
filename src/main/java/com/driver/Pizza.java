@@ -3,11 +3,10 @@ package com.driver;
 public class Pizza {
 
     private int price;
-    private String bill;
-     private int ExtraCheesePrice=70;
-     private int ExtraToppingsPrice=80;
-     private int backPackPrice= 20;
-     private int basePizzaPrice;
+    private final int ExtraCheesePrice=70;
+     private final int ExtraToppingsPrice=80;
+     private final int backPackPrice= 20;
+     private final int basePizzaPrice;
      private boolean isExtraCheeseAdded =false;
     private boolean isExtraToppingsAdded =false;
     private boolean isTakeaway =false;
