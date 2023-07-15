@@ -3,32 +3,69 @@ package com.driver;
 public class Pizza {
 
     private int price;
-    private Boolean isVeg;
     private String bill;
+     private int ExtraCheesePrice=70;
+     private int ExtraToppingsPrice=80;
+     private int backPackPrice= 20;
+     private int basePizzaPrice;
+     private boolean isExtraCheeseAdded =false;
+    private boolean isExtraToppingsAdded =false;
+    private boolean isTakeaway =false;
+
+
 
     public Pizza(Boolean isVeg){
-        this.isVeg = isVeg;
-        // your code goes here
+        if(isVeg){
+            this.price= 300;
+        }
+        else{
+            this.price=400;
+        }
+       basePizzaPrice=this.price;
     }
 
     public int getPrice(){
+
         return this.price;
     }
 
     public void addExtraCheese(){
         // your code goes here
-    }
+        isExtraCheeseAdded =true;
+        this.price = this.price + ExtraCheesePrice;
+        }
+
+
+
 
     public void addExtraToppings(){
-        // your code goes here
+        // your code goes
+        isExtraToppingsAdded =true;
+        this.price = this.price +ExtraToppingsPrice;
+
     }
 
     public void addTakeaway(){
         // your code goes here
+        isTakeaway=true;
+        this.price = this.price +backPackPrice;
     }
 
-    public String getBill(){
+    public void getBill() {
         // your code goes here
-        return this.bill;
+        String bill = "";
+         System.out.println(basePizzaPrice);
+        if (isExtraCheeseAdded) {
+            bill += ExtraCheesePrice;
+        }
+        if (isExtraToppingsAdded) {
+            bill += ExtraToppingsPrice;
+        }
+        if (isTakeaway) {
+            bill += backPackPrice;
+        }
+          bill+= this.price;
+         System.out.println(bill);
     }
+
 }
